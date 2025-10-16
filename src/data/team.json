@@ -1,67 +1,55 @@
 {
-  "leadership": [
+  "coordinators": [
     {
-      "name": "John Doe",
-      "role": "President",
-      "image": "/images/team-placeholder.webp",
-      "bio": "Leading Coders Nexus SDIT with passion for open source",
-      "social": {
-        "github": "johndoe",
-        "linkedin": "johndoe",
-        "twitter": "johndoe"
-      }
+      "name": "Prof. Nishmitha M R",
+      "role": "Faculty Co-ordinator",
+      "image": "/images/team/nishmitha.jpg"
     },
     {
-      "name": "Jane Smith",
-      "role": "Vice President",
-      "image": "/images/team-placeholder.webp",
-      "bio": "Organizing amazing tech events and workshops",
-      "social": {
-        "github": "janesmith",
-        "linkedin": "janesmith"
-      }
+      "name": "Prof. Thejas",
+      "role": "Faculty Co-ordinator",
+      "image": "/images/team/thejas.jpg"
+    },
+    {
+      "name": "Prof. Khyathi",
+      "role": "Faculty Co-ordinator",
+      "image": "/images/team/khyathi.jpg"
     }
   ],
-  "core": [
+  "members": [
     {
       "name": "Bhavan",
       "role": "President",
-      "image": "/images/team-placeholder.webp",
-      "social": {
-        "github": "alicejohnson"
-      }
+      "github": "",
+      "linkedin": ""
     },
     {
-      "name": "Sooraj",
-      "role": "Vice President",
-      "image": "/images/team-placeholder.webp",
-      "social": {
-        "github": "alicejohnson"
-      }
+      "name": "Sooraj Sai",
+      "role": "Vice-President",
+      "github": "",
+      "linkedin": "soorajsaii"
     },
     {
       "name": "Aston Shon Dsouza",
       "role": "Technical Lead",
-      "image": "/images/team-placeholder.webp",
-      "social": {
-        "github": "Shondsouza"
-      }
+      "github": "shondsouza",
+      "linkedin": "shondsouza"
     },
     {
-      "name": "Harshith Vasanth Shetty",
+      "name": "Harshith Vasanth Shetty  ",
       "role": "Technical Lead",
-      "image": "/images/team-placeholder.webp",
-      "social": {
-        "github": "homieshetty"
-      }
+      "github": "homieshetty",
+      "linkedin":"homie-shetty"
     },
     {
-      "name": "Harshith Vasanth Shetty",
+      "name": "Harshitha",
       "role": "Technical Lead",
-      "image": "/images/team-placeholder.webp",
-      "social": {
-        "github": "homieshetty"
-      }
+      "github": "harshisalian"
+    },
+    {
+      "name": "Suhas M Kotian",
+      "role": "Organizer",
+      "github": "suhaskotian"
     }
   ]
 }

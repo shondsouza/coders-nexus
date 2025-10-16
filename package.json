@@ -4,9 +4,13 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "add-event": "node scripts/add-event.js",
+    "check": "astro check",
+    "clean": "rm -rf node_modules .astro dist"
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.2",

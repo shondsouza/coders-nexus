@@ -3,7 +3,6 @@ import socialData from '../data/social.json';
 
 const currentPath = Astro.url.pathname;
 
-// Updated navLinks to only include Home, Events, and Team
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Events', href: '/events' },
@@ -19,38 +18,39 @@ const isActive = (href: string) => {
 <nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between h-16">
-      <!-- Logo on the left side -->
+      <!-- Logo -->
       <a href="/" class="flex items-center space-x-3 group">
         <img
           src="/images/logo.png"
           alt="Coders Nexus SDIT Logo"
           class="h-10 w-10 transition-transform group-hover:scale-110"
         />
-        <span class="text-xl font-bold gradient-text hidden sm:block">
+        <span class="text-xl font-bold text-black dark:text-white hidden sm:block">
           Coders Nexus SDIT
         </span>
       </a>
 
-      <!-- Navigation links on the right side -->
+      <!-- Desktop Nav -->
       <div class="hidden md:flex items-center space-x-1">
         {navLinks.map((link) => (
           <a
             href={link.href}
-            class={`px-4 py-2 rounded-lg transition-colors ${
-              isActive(link.href)
-                ? 'bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 font-semibold'
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-            }`}
+            class={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200
+              ${
+                isActive(link.href)
+                  ? 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 font-semibold'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-700 dark:hover:text-purple-300'
+              }`}
           >
             {link.name}
           </a>
         ))}
       </div>
 
-      <!-- Mobile Menu Button -->
+      <!-- Mobile Button -->
       <button
         id="mobile-menu-button"
-        class="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+        class="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-700 dark:hover:text-purple-300"
         aria-label="Toggle menu"
         aria-expanded="false"
       >
@@ -86,19 +86,17 @@ const isActive = (href: string) => {
     </div>
 
     <!-- Mobile Menu -->
-    <div
-      id="mobile-menu"
-      class="hidden md:hidden pb-4"
-    >
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
       <div class="flex flex-col space-y-2">
         {navLinks.map((link) => (
           <a
             href={link.href}
-            class={`px-4 py-2 rounded-lg transition-colors ${
-              isActive(link.href)
-                ? 'bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 font-semibold'
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-            }`}
+            class={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+              ${
+                isActive(link.href)
+                  ? 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 font-semibold'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-700 dark:hover:text-purple-300'
+              }`}
           >
             {link.name}
           </a>
@@ -117,7 +115,6 @@ const isActive = (href: string) => {
   if (menuButton && mobileMenu && menuIcon && closeIcon) {
     menuButton.addEventListener('click', () => {
       const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-      
       menuButton.setAttribute('aria-expanded', (!isExpanded).toString());
       mobileMenu.classList.toggle('hidden');
       menuIcon.classList.toggle('hidden');
