@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Charlie Brown",
+    "contributions": 42,
+    "github": "charliebrown",
+    "avatar": "https://github.com/charliebrown.png"
+  },
+  {
+    "name": "Diana Prince",
+    "contributions": 38,
+    "github": "dianaprince",
+    "avatar": "https://github.com/dianaprince.png"
+  }
+]

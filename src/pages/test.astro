@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Test Page"
+  description="Testing the navigation and footer"
+>
+  <div class="container mx-auto px-4 py-16 min-h-screen">
+    <h1 class="text-4xl font-bold mb-4 gradient-text">Navigation & Footer Test</h1>
+    <p class="text-gray-600 mb-4 dark:text-gray-300">
+      Check the navigation bar above and footer below!
+    </p>
+    
+    <div class="space-y-4">
+      <div class="p-6 bg-white rounded-lg shadow-md dark:bg-gray-800 card-hover">
+        <h2 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">✓ Navigation Features</h2>
+        <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+          <li>Sticky header with backdrop blur</li>
+          <li>Active page highlighting</li>
+          <li>Mobile responsive menu</li>
+          <li>Social media icons</li>
+          <li>Logo with hover effect</li>
+        </ul>
+      </div>
+
+      <div class="p-6 bg-white rounded-lg shadow-md dark:bg-gray-800 card-hover">
+        <h2 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">✓ Footer Features</h2>
+        <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+          <li>Multi-column layout</li>
+          <li>Quick links to all pages</li>
+          <li>Social media links</li>
+          <li>Copyright information</li>
+          <li>Made with love message</li>
+        </ul>
+      </div>
+
+      <div class="p-6 bg-white rounded-lg shadow-md dark:bg-gray-800 card-hover">
+        <h2 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">🧪 Test Instructions</h2>
+        <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+          <li>Scroll down to see sticky nav bar</li>
+          <li>Resize window to test mobile menu</li>
+          <li>Click nav links (they won't work yet)</li>
+          <li>Test social media links in nav and footer</li>
+          <li>Scroll to bottom to see scroll-to-top button</li>
+        </ul>
+      </div>
+      
+      <!-- Test Tailwind classes -->
+      <div class="p-6 bg-primary-100 rounded-lg shadow-md dark:bg-primary-900">
+        <h2 class="text-2xl font-semibold mb-2 text-primary-800 dark:text-primary-200">🎨 Tailwind CSS Test</h2>
+        <p class="text-primary-700 dark:text-primary-300 mb-4">
+          If you can see this box with a light blue background and dark blue text, Tailwind CSS is working!
+        </p>
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-primary-500 rounded-full"></div>
+          <div class="w-12 h-12 bg-accent-500 rounded-full"></div>
+          <div class="w-12 h-12 bg-gray-500 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add some height to test scroll -->
+    <div class="h-96"></div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import EventCard from '../components/EventCard.astro';
+import Button from '../components/Button.astro';
+import { getCollection } from 'astro:content';
+import { sortByDate } from '../utils/sort';
+
+// Get latest 3 events
+const allEvents = await getCollection('events', ({ data }) => data.published !== false);
+const latestEvents = sortByDate(allEvents).slice(0, 3);
+---
+
+<BaseLayout
+  title="Home"
+  description="Coders Nexus SDIT - A student-led community fostering innovation, collaboration, and technical excellence through coding, open source, and technology events."
+>
+  <!-- Hero Section -->
+  <Hero
+    title="Where Innovation Meets Code"
+    subtitle="🚀 Student Tech Community"
+    description="Join us in building amazing projects, learning new technologies, and growing together as a community of passionate developers and tech enthusiasts."
+    primaryCTA={{ text: "Join Our Community", href: "/contact" }}
+    secondaryCTA={{ text: "Explore Events", href: "/events" }}
+  />
+
+  <!-- About Preview Section -->
+  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+            Who We Are
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            Coders Nexus SDIT is a vibrant student-led community dedicated to fostering 
+            technical excellence and innovation. We bring together passionate developers, 
+            designers, and tech enthusiasts to learn, build, and grow together.
+          </p>
+          <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            Through hands-on workshops, hackathons, and collaborative projects, we empower 
+            students to develop real-world skills and contribute to meaningful open-source 
+            initiatives.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <Button href="/about" variant="primary">
+              Learn More About Us
+            </Button>
+            <Button href="/team" variant="outline">
+              Meet Our Team
+            </Button>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <div class="bg-gradient-to-br from-primary-500 to-primary-600 p-6 rounded-2xl text-white">
+                <div class="text-4xl font-bold mb-2">500+</div>
+                <div class="text-primary-100">Active Members</div>
+              </div>
+              <div class="bg-gradient-to-br from-accent-500 to-accent-600 p-6 rounded-2xl text-white">
+                <div class="text-4xl font-bold mb-2">50+</div>
+                <div class="text-accent-100">Events Hosted</div>
+              </div>
+            </div>
+            <div class="space-y-4 mt-8">
+              <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-6 rounded-2xl text-white">
+                <div class="text-4xl font-bold mb-2">20+</div>
+                <div class="text-purple-100">Open Projects</div>
+              </div>
+              <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-2xl text-white">
+                <div class="text-4xl font-bold mb-2">100%</div>
+                <div class="text-blue-100">Student Led</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Events Section -->
+  <section class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Upcoming Events
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Join us for exciting workshops, hackathons, and tech talks designed to enhance your skills and connect with fellow developers.
+        </p>
+      </div>
+
+      {latestEvents.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {latestEvents.map((event) => (
+            <EventCard
+              title={event.data.title}
+              description={event.data.description}
+              date={event.data.date}
+              location={event.data.location}
+              coverImage={event.data.coverImage}
+              slug={event.slug}
+              tags={event.data.tags}
+              featured={event.data.featured}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-12">
+          <p class="text-gray-600 dark:text-gray-400 text-lg">
+            No upcoming events at the moment. Check back soon!
+          </p>
+        </div>
+      )}
+
+      <div class="text-center">
+        <Button href="/events" variant="primary" size="lg">
+          View All Events
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          What We Do
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          We organize diverse activities to help you grow as a developer and tech professional.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Workshops -->
+        <div class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-8 rounded-2xl">
+          <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Workshops & Seminars</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Regular hands-on workshops covering web development, mobile apps, AI/ML, and more.
+          </p>
+        </div>
+
+        <!-- Hackathons -->
+        <div class="bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/20 dark:to-accent-800/20 p-8 rounded-2xl">
+          <div class="w-12 h-12 bg-accent-600 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Hackathons</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Exciting 24-hour coding challenges to build innovative solutions and win prizes.
+          </p>
+        </div>
+
+        <!-- Open Source -->
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-8 rounded-2xl">
+          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Open Source Projects</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Collaborate on real-world projects and contribute to the open-source community.
+          </p>
+        </div>
+
+        <!-- Tech Talks -->
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Tech Talks</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Learn from industry experts and alumni about latest technologies and career insights.
+          </p>
+        </div>
+
+        <!-- Networking -->
+        <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-8 rounded-2xl">
+          <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Networking Events</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Connect with peers, mentors, and professionals from the tech industry.
+          </p>
+        </div>
+
+        <!-- Mentorship -->
+        <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-8 rounded-2xl">
+          <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Mentorship Programs</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Get guidance from experienced developers and contribute to mentoring juniors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

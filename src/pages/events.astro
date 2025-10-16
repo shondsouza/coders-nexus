@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EventCard from '../components/EventCard.astro';
+import { getCollection } from 'astro:content';
+import { sortByDate, filterFeatured } from '../utils/sort';
+
+// Get all published events
+const allEvents = await getCollection('events', ({ data }) => data.published !== false);
+const sortedEvents = sortByDate(allEvents);
+const featuredEvents = filterFeatured(sortedEvents);
+const regularEvents = sortedEvents.filter(event => !event.data.featured);
+---
+
+<BaseLayout
+  title="Events"
+  description="Explore our upcoming and past events - workshops, hackathons, tech talks, and more at Coders Nexus SDIT."
+>
+  <!-- Hero Section -->
+  <section class="py-20 lg:py-28 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+        Our Events
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Join us for exciting workshops, hackathons, and tech talks designed to enhance your skills and connect with fellow developers.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Events -->
+  {featuredEvents.length > 0 && (
+    <section class="py-16 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          🌟 Featured Events
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredEvents.map((event) => (
+            <EventCard
+              title={event.data.title}
+              description={event.data.description}
+              date={event.data.date}
+              location={event.data.location}
+              coverImage={event.data.coverImage}
+              slug={event.slug}
+              tags={event.data.tags}
+              featured={true}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- All Events -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+        {featuredEvents.length > 0 ? 'All Events' : 'Upcoming Events'}
+      </h2>
+      
+      {regularEvents.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {regularEvents.map((event) => (
+            <EventCard
+              title={event.data.title}
+              description={event.data.description}
+              date={event.data.date}
+              location={event.data.location}
+              coverImage={event.data.coverImage}
+              slug={event.slug}
+              tags={event.data.tags}
+              featured={false}
+            />
+          ))}
+        </div>
+      ) : featuredEvents.length === 0 ? (
+        <div class="text-center py-12">
+          <div class="w-24 h-24 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+            No Events Yet
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-lg mb-6">
+            We're planning exciting events. Check back soon!
+          </p>
+        </div>
+      ) : null}
+    </div>
+  </section>
+</BaseLayout>

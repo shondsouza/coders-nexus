@@ -1,0 +1,67 @@
+{
+  "leadership": [
+    {
+      "name": "John Doe",
+      "role": "President",
+      "image": "/images/team-placeholder.webp",
+      "bio": "Leading Coders Nexus SDIT with passion for open source",
+      "social": {
+        "github": "johndoe",
+        "linkedin": "johndoe",
+        "twitter": "johndoe"
+      }
+    },
+    {
+      "name": "Jane Smith",
+      "role": "Vice President",
+      "image": "/images/team-placeholder.webp",
+      "bio": "Organizing amazing tech events and workshops",
+      "social": {
+        "github": "janesmith",
+        "linkedin": "janesmith"
+      }
+    }
+  ],
+  "core": [
+    {
+      "name": "Bhavan",
+      "role": "President",
+      "image": "/images/team-placeholder.webp",
+      "social": {
+        "github": "alicejohnson"
+      }
+    },
+    {
+      "name": "Sooraj",
+      "role": "Vice President",
+      "image": "/images/team-placeholder.webp",
+      "social": {
+        "github": "alicejohnson"
+      }
+    },
+    {
+      "name": "Aston Shon Dsouza",
+      "role": "Technical Lead",
+      "image": "/images/team-placeholder.webp",
+      "social": {
+        "github": "Shondsouza"
+      }
+    },
+    {
+      "name": "Harshith Vasanth Shetty",
+      "role": "Technical Lead",
+      "image": "/images/team-placeholder.webp",
+      "social": {
+        "github": "homieshetty"
+      }
+    },
+    {
+      "name": "Harshith Vasanth Shetty",
+      "role": "Technical Lead",
+      "image": "/images/team-placeholder.webp",
+      "social": {
+        "github": "homieshetty"
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TeamMember from '../components/TeamMember.astro';
+import teamData from '../data/team.json';
+---
+
+<BaseLayout
+  title="Our Team"
+  description="Meet the passionate individuals behind Coders Nexus SDIT who make our community thrive."
+>
+  <!-- Hero Section -->
+  <section class="py-20 lg:py-28 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+        Meet Our Team
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Passionate individuals dedicated to building an amazing tech community and empowering fellow students.
+      </p>
+    </div>
+  </section>
+
+  <!-- Leadership Team -->
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Leadership Team
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Our leaders who guide the community and set the vision for the future.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {teamData.leadership.map((member) => {
+          // For leadership, use the provided image directly (manual photos)
+          const props = {
+            name: member.name,
+            role: member.role,
+            image: member.image,
+            useGitHubAvatar: false, // Disable GitHub avatars for leadership
+            social: member.social
+          };
+          
+          // Add bio only if it exists
+          if ('bio' in member && member.bio) {
+            // @ts-ignore - TypeScript is being overly strict here
+            props.bio = member.bio;
+          }
+          
+          return <TeamMember {...props} />;
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Team -->
+  {teamData.core && teamData.core.length > 0 && (
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Core Team
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            The backbone of our community who work tirelessly to organize events and support members.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {teamData.core.map((member) => {
+            // For core team, prefer GitHub avatars if available
+            const props = {
+              name: member.name,
+              role: member.role,
+              image: member.image,
+              useGitHubAvatar: true, // Enable GitHub avatars for core team
+              social: member.social
+            };
+            
+            // Add bio only if it exists
+            if ('bio' in member && member.bio) {
+              // @ts-ignore - TypeScript is being overly strict here
+              props.bio = member.bio;
+            }
+            
+            return <TeamMember {...props} />;
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Join Team CTA -->
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-3xl mx-auto bg-gradient-to-r from-primary-600 to-accent-600 rounded-3xl p-12 text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Want to Join Our Team?
+        </h2>
+        <p class="text-xl text-primary-100 mb-8">
+          We're always looking for passionate individuals to help us grow and make an impact.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
+        >
+          Get in Touch
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

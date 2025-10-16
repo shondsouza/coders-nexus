@@ -1,0 +1,85 @@
+---
+title: "Web Development Bootcamp 2024"
+description: "Learn modern web development with React, Next.js, and Tailwind CSS in this comprehensive hands-on workshop."
+date: 2024-12-15
+endDate: 2024-12-16
+location: "Main Auditorium, SDIT Campus"
+coverImage: "https://placehold.co/1200x630/0ea5e9/white?text=Web+Development+Bootcamp"
+gallery:
+  - "/content/events/web-dev-workshop/photo1.webp"
+  - "/content/events/web-dev-workshop/photo2.webp"
+featured: true
+tags: ["React", "Next.js", "Tailwind CSS", "Web Development", "Workshop"]
+organizers: ["Coders Nexus SDIT", "Tech Club"]
+registrationLink: "https://forms.google.com/your-form-link"
+published: true
+---
+
+## About the Workshop
+
+Join us for an intensive 2-day web development bootcamp where you'll learn the latest technologies used by top companies worldwide. This hands-on workshop is designed for both beginners and intermediate developers looking to level up their skills.
+
+## What You'll Learn
+
+### Day 1: Fundamentals
+- **React Basics**: Components, Props, State, and Hooks
+- **Modern JavaScript**: ES6+ features, async/await, and modules
+- **Responsive Design**: CSS Grid, Flexbox, and mobile-first approach
+- **Tailwind CSS**: Utility-first styling and component design
+
+### Day 2: Advanced Topics
+- **Next.js Framework**: Server-side rendering and static generation
+- **API Integration**: Fetching data and handling authentication
+- **State Management**: Context API and modern patterns
+- **Deployment**: Vercel deployment and best practices
+
+## Prerequisites
+
+- Basic knowledge of HTML, CSS, and JavaScript
+- Laptop with Node.js installed
+- Code editor (VS Code recommended)
+- Enthusiasm to learn!
+
+## Schedule
+
+**Day 1 - December 15, 2024**
+- 9:00 AM - Registration & Breakfast
+- 9:30 AM - Opening & Introduction to React
+- 11:00 AM - Hands-on: Building Your First Component
+- 1:00 PM - Lunch Break
+- 2:00 PM - Tailwind CSS Workshop
+- 4:00 PM - Project Time
+- 6:00 PM - Day 1 Wrap-up
+
+**Day 2 - December 16, 2024**
+- 9:00 AM - Recap & Q&A
+- 9:30 AM - Introduction to Next.js
+- 11:00 AM - Building a Full-Stack App
+- 1:00 PM - Lunch Break
+- 2:00 PM - API Integration Workshop
+- 4:00 PM - Deployment & Best Practices
+- 5:30 PM - Closing Ceremony & Certificates
+
+## What's Included
+
+- ✅ 2 days of intensive training
+- ✅ Learning materials and resources
+- ✅ Breakfast and lunch both days
+- ✅ Certificate of completion
+- ✅ Access to Discord community
+- ✅ Mentor support for 1 month
+
+## Registration
+
+Limited seats available! Register now to secure your spot.
+
+**Registration Fee**: Free for SDIT students | ₹500 for external participants
+
+**Deadline**: December 10, 2024
+
+## Contact
+
+For any queries, reach out to us at:
+- Email: events@codersnexus-sdit.org
+- Discord: Join our server
+- Phone: +91 98765 43210

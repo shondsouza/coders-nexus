@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Button from '../components/Button.astro';
+import EventCard from '../components/EventCard.astro';
+import TeamMember from '../components/TeamMember.astro';
+---
+
+<BaseLayout
+  title="Components Test"
+  description="Testing all reusable components"
+>
+  <!-- Hero Test -->
+  <Hero
+    title="Welcome to Coders Nexus SDIT"
+    subtitle="Student Tech Community"
+    description="Join us in building amazing projects, learning new technologies, and growing together as a community of passionate developers."
+    primaryCTA={{ text: "Join Now", href: "/contact" }}
+    secondaryCTA={{ text: "View Events", href: "/events" }}
+  />
+
+  <!-- Buttons Test -->
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Button Variants</h2>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button variant="primary" size="lg">Primary Large</Button>
+        <Button variant="secondary" size="lg">Secondary Large</Button>
+        <Button variant="outline" size="md">Outline Medium</Button>
+        <Button variant="ghost" size="sm">Ghost Small</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Cards Test -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Event Cards</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <EventCard
+          title="Web Development Workshop"
+          description="Learn modern web development with React, Next.js, and Tailwind CSS in this hands-on workshop."
+          date={new Date('2024-03-15')}
+          location="Main Auditorium"
+          coverImage="/images/team-placeholder.webp"
+          slug="web-dev-workshop"
+          tags={['React', 'Next.js', 'Tailwind']}
+          featured={true}
+        />
+        <EventCard
+          title="Hackathon 2024"
+          description="24-hour coding challenge with amazing prizes and opportunities to showcase your skills."
+          date={new Date('2024-04-20')}
+          location="Tech Lab"
+          coverImage="/images/team-placeholder.webp"
+          slug="hackathon-2024"
+          tags={['Coding', 'Competition', 'Prizes']}
+        />
+        <EventCard
+          title="Git & GitHub Basics"
+          description="Master version control and collaboration with Git and GitHub fundamentals."
+          date={new Date('2024-05-10')}
+          location="Computer Lab 2"
+          coverImage="/images/team-placeholder.webp"
+          slug="git-workshop"
+          tags={['Git', 'GitHub', 'Version Control']}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Members Test -->
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Team Members</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <TeamMember
+          name="John Doe"
+          role="President"
+          image="/images/team-placeholder.webp"
+          bio="Leading Coders Nexus SDIT with passion for open source and community building."
+          social={{ github: "johndoe", linkedin: "johndoe" }}
+        />
+        <TeamMember
+          name="Jane Smith"
+          role="Vice President"
+          image="/images/team-placeholder.webp"
+          bio="Organizing amazing tech events and workshops for the community."
+          social={{ github: "janesmith", linkedin: "janesmith", twitter: "janesmith" }}
+        />
+        <TeamMember
+          name="Alice Johnson"
+          role="Technical Lead"
+          image="/images/team-placeholder.webp"
+          bio="Building innovative projects and mentoring aspiring developers."
+          social={{ github: "alicejohnson" }}
+        />
+        <TeamMember
+          name="Bob Wilson"
+          role="Design Lead"
+          image="/images/team-placeholder.webp"
+          bio="Creating beautiful user experiences and design systems."
+          social={{ github: "bobwilson", linkedin: "bobwilson" }}
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Project Alpha",
+    "description": "An open-source tool for developers to streamline their workflow",
+    "image": "/images/team-placeholder.webp",
+    "github": "https://github.com/coders-nexus-sdit/project-alpha",
+    "demo": "https://project-alpha.demo.com",
+    "tags": ["React", "TypeScript", "Node.js"],
+    "featured": true
+  },
+  {
+    "title": "Project Beta",
+    "description": "A community-driven learning platform",
+    "image": "/images/team-placeholder.webp",
+    "github": "https://github.com/coders-nexus-sdit/project-beta",
+    "tags": ["Python", "Django", "PostgreSQL"],
+    "featured": false
+  }
+]
