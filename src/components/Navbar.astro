@@ -15,93 +15,96 @@ const isActive = (href: string) => {
 };
 ---
 
-<nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-  <div class="container mx-auto px-4">
-    <div class="flex items-center justify-between h-16">
-      <!-- Logo -->
-      <a href="/" class="flex items-center space-x-3 group">
-        <img
-          src="/images/logo.png"
-          alt="Coders Nexus SDIT Logo"
-          class="h-10 w-10 transition-transform group-hover:scale-110"
-        />
-        <span class="text-xl font-bold text-black dark:text-white hidden sm:block">
-          Coders Nexus SDIT
-        </span>
-      </a>
-
-      <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center space-x-1">
-        {navLinks.map((link) => (
-          <a
-            href={link.href}
-            class={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200
-              ${
-                isActive(link.href)
-                  ? 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 font-semibold'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-700 dark:hover:text-purple-300'
-              }`}
-          >
-            {link.name}
-          </a>
-        ))}
+<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-sm transition-all duration-300 navbar-container">
+  <div class="container mx-auto flex items-center justify-between px-6 md:px-12 py-4">
+    <!-- Logo + Text -->
+    <a href="/" class="flex items-center space-x-3 group">
+      <img
+        src="/images/logo.png"
+        alt="Coders Nexus Logo"
+        class="h-12 w-12 transition-transform group-hover:scale-110"
+      />
+      <div>
+        <div class="text-xl font-bold text-gray-900 leading-tight">
+          Coders Nexus
+        </div>
+        <div class="text-xs text-gray-600 font-medium">
+          SDIT Open Source Community
+        </div>
       </div>
+    </a>
 
-      <!-- Mobile Button -->
-      <button
-        id="mobile-menu-button"
-        class="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-700 dark:hover:text-purple-300"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-      >
-        <svg
-          id="menu-icon"
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center space-x-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200
+            ${
+              isActive(link.href)
+                ? 'text-blue-700 font-semibold underline underline-offset-4'
+                : 'text-gray-700 hover:text-blue-700'
+            }`}
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-        <svg
-          id="close-icon"
-          class="w-6 h-6 hidden"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
+          {link.name}
+        </a>
+      ))}
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden pb-4">
-      <div class="flex flex-col space-y-2">
-        {navLinks.map((link) => (
-          <a
-            href={link.href}
-            class={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
-              ${
-                isActive(link.href)
-                  ? 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 font-semibold'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-700 dark:hover:text-purple-300'
-              }`}
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden p-2 text-gray-700 hover:text-blue-700 transition-all duration-200"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg
+        id="menu-icon"
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+      <svg
+        id="close-icon"
+        class="w-6 h-6 hidden"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 container mx-auto">
+    <div class="flex flex-col space-y-2 items-center">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+            ${
+              isActive(link.href)
+                ? 'text-blue-700 font-semibold underline underline-offset-4'
+                : 'text-gray-700 hover:text-blue-700'
+            }`}
+        >
+          {link.name}
+        </a>
+      ))}
     </div>
   </div>
 </nav>
@@ -111,7 +114,9 @@ const isActive = (href: string) => {
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = document.getElementById('menu-icon');
   const closeIcon = document.getElementById('close-icon');
+  const navbar = document.querySelector('nav');
 
+  // Handle mobile menu toggle
   if (menuButton && mobileMenu && menuIcon && closeIcon) {
     menuButton.addEventListener('click', () => {
       const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
@@ -121,4 +126,66 @@ const isActive = (href: string) => {
       closeIcon.classList.toggle('hidden');
     });
   }
+
+  // Handle navbar visibility and background on scroll
+  let lastScrollTop = 0;
+  let scrollTimeout: number;
+  
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (navbar) {
+      // Show navbar when scrolling
+      navbar.classList.remove('navbar-hidden');
+      
+      // Toggle transparent background based on scroll position
+      if (scrollTop <= 50) {
+        navbar.classList.add('navbar-transparent');
+      } else {
+        navbar.classList.remove('navbar-transparent');
+      }
+      
+      // Clear existing timeout
+      clearTimeout(scrollTimeout);
+      
+      // Hide navbar after user stops scrolling (only if scrolled down)
+      if (scrollTop > 100) {
+        scrollTimeout = window.setTimeout(() => {
+          navbar.classList.add('navbar-hidden');
+        }, 2000); // Hide after 2 seconds of no scrolling
+      }
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+  
+  // Set initial state on page load
+  if (navbar) {
+    const initialScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (initialScroll <= 50) {
+      navbar.classList.add('navbar-transparent');
+    }
+  }
 </script>
+
+<style>
+  .navbar-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+  }
+  
+  .navbar-transparent {
+    background-color: transparent !important;
+    border-bottom: 1px solid transparent !important;
+  }
+  
+  .dark .navbar-container {
+    background-color: rgba(17, 24, 39, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-hidden {
+    transform: translateY(-100%);
+  }
+</style>

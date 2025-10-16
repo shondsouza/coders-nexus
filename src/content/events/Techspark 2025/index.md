@@ -1,8 +1,8 @@
 ---
-title: "Web Development Bootcamp 2024"
-description: "Learn modern web development with React, Next.js, and Tailwind CSS in this comprehensive hands-on workshop."
-date: 2024-12-15
-endDate: 2024-12-16
+title: "Techspark 2025"
+description: "The Techspark on 29th September welcomes individuals or teams of two to compete in aptitude, coding basics, debugging, and a final coding showdown, offering a fair and engaging platform to showcase skills and win top honors."
+date: 2025-9-29
+endDate: 2025-9-29
 location: "Main Auditorium, SDIT Campus"
 coverImage: "https://placehold.co/1200x630/0ea5e9/white?text=Web+Development+Bootcamp"
 gallery:

@@ -2,13 +2,34 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EventCard from '../components/EventCard.astro';
 import { getCollection } from 'astro:content';
-import { sortByDate, filterFeatured } from '../utils/sort';
+import { sortByDate } from '../utils/sort';
 
 // Get all published events
 const allEvents = await getCollection('events', ({ data }) => data.published !== false);
 const sortedEvents = sortByDate(allEvents);
-const featuredEvents = filterFeatured(sortedEvents);
-const regularEvents = sortedEvents.filter(event => !event.data.featured);
+
+// Group events by academic year
+function getAcademicYear(date: Date): string {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  // Academic year typically starts in July/August
+  if (month >= 6) {
+    return `${year}-${(year + 1).toString().slice(-2)}`;
+  }
+  return `${year - 1}-${year.toString().slice(-2)}`;
+}
+
+const eventsByYear = sortedEvents.reduce((acc, event) => {
+  const year = getAcademicYear(event.data.date);
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(event);
+  return acc;
+}, {} as Record<string, typeof sortedEvents>);
+
+const years = Object.keys(eventsByYear).sort().reverse();
+const defaultYear = years[0] || '2023-24';
 ---
 
 <BaseLayout
@@ -16,65 +37,72 @@ const regularEvents = sortedEvents.filter(event => !event.data.featured);
   description="Explore our upcoming and past events - workshops, hackathons, tech talks, and more at Coders Nexus SDIT."
 >
   <!-- Hero Section -->
-  <section class="py-20 lg:py-28 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+  <section class="py-16 lg:py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
     <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-        Our Events
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-6">
+        Events
       </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-        Join us for exciting workshops, hackathons, and tech talks designed to enhance your skills and connect with fellow developers.
+      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        We have successfully reached out many events. As we reflect back, here are some of the events organized by CSI!
       </p>
     </div>
   </section>
 
-  <!-- Featured Events -->
-  {featuredEvents.length > 0 && (
-    <section class="py-16 bg-white dark:bg-gray-900">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-          🌟 Featured Events
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredEvents.map((event) => (
-            <EventCard
-              title={event.data.title}
-              description={event.data.description}
-              date={event.data.date}
-              location={event.data.location}
-              coverImage={event.data.coverImage}
-              slug={event.slug}
-              tags={event.data.tags}
-              featured={true}
-            />
+  <!-- Events Section with Year Tabs -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <!-- Year Tabs -->
+      <div class="flex justify-center mb-12">
+        <div class="inline-flex bg-white dark:bg-gray-800 rounded-xl shadow-lg p-2 gap-2 overflow-x-auto">
+          {years.map((year) => (
+            <button
+              class="year-tab px-6 py-3 rounded-lg font-semibold transition-all duration-200 whitespace-nowrap"
+              data-year={year}
+            >
+              {year}
+            </button>
           ))}
         </div>
       </div>
-    </section>
-  )}
 
-  <!-- All Events -->
-  <section class="py-16 bg-gray-50 dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-        {featuredEvents.length > 0 ? 'All Events' : 'Upcoming Events'}
-      </h2>
-      
-      {regularEvents.length > 0 ? (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {regularEvents.map((event) => (
-            <EventCard
-              title={event.data.title}
-              description={event.data.description}
-              date={event.data.date}
-              location={event.data.location}
-              coverImage={event.data.coverImage}
-              slug={event.slug}
-              tags={event.data.tags}
-              featured={false}
-            />
-          ))}
+      <!-- Events Grid by Year -->
+      {years.map((year) => (
+        <div class="year-content hidden" data-year-content={year}>
+          {eventsByYear[year].length > 0 ? (
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {eventsByYear[year].map((event) => (
+                <EventCard
+                  title={event.data.title}
+                  description={event.data.description}
+                  date={event.data.date}
+                  location={event.data.location}
+                  coverImage={event.data.coverImage}
+                  slug={event.slug}
+                  tags={event.data.tags}
+                  featured={event.data.featured}
+                />
+              ))}
+            </div>
+          ) : (
+            <div class="text-center py-12">
+              <div class="w-24 h-24 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                No Events for {year}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-lg">
+                Check other years for more events!
+              </p>
+            </div>
+          )}
         </div>
-      ) : featuredEvents.length === 0 ? (
+      ))}
+
+      <!-- No Events Message -->
+      {years.length === 0 && (
         <div class="text-center py-12">
           <div class="w-24 h-24 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,11 +112,63 @@ const regularEvents = sortedEvents.filter(event => !event.data.featured);
           <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             No Events Yet
           </h3>
-          <p class="text-gray-600 dark:text-gray-400 text-lg mb-6">
+          <p class="text-gray-600 dark:text-gray-400 text-lg">
             We're planning exciting events. Check back soon!
           </p>
         </div>
-      ) : null}
+      )}
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Year tab functionality
+  const tabs = document.querySelectorAll('.year-tab');
+  const contents = document.querySelectorAll('.year-content');
+
+  function setActiveTab(year: string) {
+    // Update tabs
+    tabs.forEach(tab => {
+      if (tab.getAttribute('data-year') === year) {
+        tab.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-600', 'text-white', 'shadow-md');
+        tab.classList.remove('text-gray-700', 'dark:text-gray-300', 'hover:bg-gray-100', 'dark:hover:bg-gray-700');
+      } else {
+        tab.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-blue-600', 'text-white', 'shadow-md');
+        tab.classList.add('text-gray-700', 'dark:text-gray-300', 'hover:bg-gray-100', 'dark:hover:bg-gray-700');
+      }
+    });
+
+    // Update content
+    contents.forEach(content => {
+      if (content.getAttribute('data-year-content') === year) {
+        content.classList.remove('hidden');
+      } else {
+        content.classList.add('hidden');
+      }
+    });
+  }
+
+  // Set initial active tab
+  if (tabs.length > 0) {
+    const firstYear = tabs[0].getAttribute('data-year');
+    if (firstYear) {
+      setActiveTab(firstYear);
+    }
+  }
+
+  // Add click listeners
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const year = tab.getAttribute('data-year');
+      if (year) {
+        setActiveTab(year);
+      }
+    });
+  });
+</script>
+
+<style>
+  .year-tab {
+    cursor: pointer;
+  }
+</style>

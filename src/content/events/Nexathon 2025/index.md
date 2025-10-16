@@ -1,9 +1,9 @@
 ---
-title: "CodeFest Hackathon 2024"
+title: "Nexathon Hackathon 2025"
 description: "24-hour coding marathon with exciting challenges, amazing prizes, and opportunities to showcase your innovation."
-date: 2025-01-20
-endDate: 2025-01-21
-location: "Tech Innovation Lab, Building B"
+date: 2025-10-28
+endDate: 2025-10-29
+location: "Shree Devi Institute of Technology, Mangaluru"
 coverImage: "https://placehold.co/1200x630/0ea5e9/white?text=CodeFest+Hackathon"
 gallery:
   - "/content/events/hackathon-2024/photo1.webp"
