@@ -41,6 +41,26 @@ async function createEvent() {
     const featured = await question('Featured event? (y/n): ');
     const organizers = await question('Organizers (comma-separated): ');
     
+    // Ask for either registration link or website link
+    console.log('\nFor the event link, you can provide either:');
+    console.log('- Registration link (for upcoming events)');
+    console.log('- Website link (for past events or events without registration)');
+    const hasLink = await question('Do you want to add a link? (y/n): ');
+    
+    let registrationLink = '';
+    let websiteLink = '';
+    
+    if (hasLink.toLowerCase() === 'y') {
+      const linkType = await question('Link type - (1) Registration or (2) Website: ');
+      const link = await question('Enter the link URL: ');
+      
+      if (linkType === '1') {
+        registrationLink = link;
+      } else {
+        websiteLink = link;
+      }
+    }
+    
     // Generate slug
     const slug = slugify(title);
     
@@ -72,7 +92,8 @@ gallery: []
 featured: ${isFeatured}
 tags: [${tagsArray}]
 organizers: [${organizersArray}]
-registrationLink: ""
+registrationLink: "${registrationLink}"
+websiteLink: "${websiteLink}"
 published: true
 ---
 
@@ -110,12 +131,8 @@ For queries, reach out at events@codersnexus-sdit.org
     
     // Create placeholder for cover image
     fs.writeFileSync(
-      path.join(imageDir, 'README.txt'),
-      `Add your event images here:
-
-- cover.webp (1200x630px recommended)
-- Additional photos in gallery/
-`
+      path.join(imageDir, 'cover.webp'),
+      'Add your event cover image here (1200x630px recommended)'
     );
 
     console.log('\n✅ Event created successfully!');
@@ -124,7 +141,7 @@ For queries, reach out at events@codersnexus-sdit.org
     console.log(`   - ${path.relative(process.cwd(), imageDir)}/`);
     console.log(`\n📝 Next steps:`);
     console.log(`   1. Edit the markdown file to add full content`);
-    console.log(`   2. Add cover image to the images directory`);
+    console.log(`   2. Add cover image to the images directory (replace the placeholder file)`);
     console.log(`   3. Run 'npm run dev' to see your event`);
     console.log(`\n🌐 URL: /events/${slug}\n`);
 

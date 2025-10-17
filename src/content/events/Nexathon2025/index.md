@@ -4,7 +4,7 @@ description: "24-hour coding marathon with exciting challenges, amazing prizes, 
 date: 2025-10-28
 endDate: 2025-10-29
 location: "Shree Devi Institute of Technology, Mangaluru"
-coverImage: "https://placehold.co/1200x630/0ea5e9/white?text=CodeFest+Hackathon"
+coverImage: "/content/events/nexathon2025/cover.webp"
 gallery:
   - "/content/events/hackathon-2024/photo1.webp"
   - "/content/events/hackathon-2024/photo2.webp"
@@ -12,13 +12,13 @@ gallery:
 featured: true
 tags: ["Hackathon", "Competition", "Innovation", "Coding", "Prizes"]
 organizers: ["Coders Nexus SDIT", "Innovation Cell"]
-registrationLink: "https://forms.google.com/your-hackathon-form"
+websiteLink: "https://nexathon.coderssdit.in"
 published: true
 ---
 
-## 🚀 About CodeFest Hackathon
+## 🚀 About Nexathon Hackathon
 
-Get ready for the most exciting coding event of the year! CodeFest Hackathon 2024 brings together the brightest minds to solve real-world problems, build innovative solutions, and compete for amazing prizes.
+Get ready for the most exciting coding event of the year! Nexathon Hackathon 2025 brings together the brightest minds to solve real-world problems, build innovative solutions, and compete for amazing prizes.
 
 ## 🎯 Theme: Build the Future
 

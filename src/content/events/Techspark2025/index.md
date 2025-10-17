@@ -1,17 +1,17 @@
 ---
 title: "Techspark 2025"
 description: "The Techspark on 29th September welcomes individuals or teams of two to compete in aptitude, coding basics, debugging, and a final coding showdown, offering a fair and engaging platform to showcase skills and win top honors."
-date: 2025-9-29
-endDate: 2025-9-29
+date: 2025-09-29
+endDate: 2025-09-29
 location: "Main Auditorium, SDIT Campus"
-coverImage: "https://placehold.co/1200x630/0ea5e9/white?text=Web+Development+Bootcamp"
+coverImage: "/src/content/events/Techspark2025/images/coverpage.png"
 gallery:
   - "/content/events/web-dev-workshop/photo1.webp"
   - "/content/events/web-dev-workshop/photo2.webp"
 featured: true
 tags: ["React", "Next.js", "Tailwind CSS", "Web Development", "Workshop"]
 organizers: ["Coders Nexus SDIT", "Tech Club"]
-registrationLink: "https://forms.google.com/your-form-link"
+websiteLink: "https://techspark.coderssdit.in"
 published: true
 ---
 

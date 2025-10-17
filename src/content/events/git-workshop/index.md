@@ -7,7 +7,7 @@ coverImage: "https://placehold.co/1200x630/0ea5e9/white?text=Git+%26+GitHub+Work
 featured: false
 tags: ["Git", "GitHub", "Version Control", "Open Source", "Workshop"]
 organizers: ["Coders Nexus SDIT"]
-registrationLink: "https://forms.google.com/git-workshop"
+websiteLink: "https://git-workshop.coderssdit.in"
 published: true
 ---
 

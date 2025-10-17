@@ -7,7 +7,7 @@ coverImage: "https://placehold.co/1200x630/0ea5e9/white?text=AI+%26+ML+Tech+Talk
 featured: false
 tags: ["AI", "Machine Learning", "Tech Talk", "Career", "Virtual"]
 organizers: ["Coders Nexus SDIT", "AI Club"]
-registrationLink: "https://zoom.us/meeting/register/your-link"
+websiteLink: "https://ai-tech-talk.coderssdit.in"
 published: true
 ---
 

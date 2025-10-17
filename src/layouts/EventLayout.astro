@@ -12,6 +12,7 @@ export interface Props {
   tags?: string[];
   organizers?: string[];
   registrationLink?: string;
+  websiteLink?: string;
 }
 
 const {
@@ -24,10 +25,14 @@ const {
   tags = [],
   organizers = [],
   registrationLink,
+  websiteLink,
 } = Astro.props;
 
 const formattedDate = formatDate(date);
 const formattedEndDate = endDate ? formatDate(endDate) : null;
+
+// Check if event is in the past
+const isPastEvent = date < new Date();
 ---
 
 <BaseLayout
@@ -135,16 +140,40 @@ const formattedEndDate = endDate ? formatDate(endDate) : null;
         </div>
       )}
 
-      <!-- Registration Button -->
-      {registrationLink && (
-        <a
-          href={registrationLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors mb-8"
-        >
-          Register Now
-        </a>
+      <!-- Action Button - Show appropriate button based on event status and available links -->
+      {isPastEvent ? (
+        // For past events, show website link if available
+        websiteLink ? (
+          <a
+            href={websiteLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors mb-8"
+          >
+            Visit Event Website
+          </a>
+        ) : null
+      ) : (
+        // For upcoming events, show registration link if available, otherwise website link
+        registrationLink ? (
+          <a
+            href={registrationLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors mb-8"
+          >
+            Register Now
+          </a>
+        ) : websiteLink ? (
+          <a
+            href={websiteLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors mb-8"
+          >
+            Visit Event Website
+          </a>
+        ) : null
       )}
 
       <!-- Divider -->

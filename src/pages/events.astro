@@ -7,29 +7,6 @@ import { sortByDate } from '../utils/sort';
 // Get all published events
 const allEvents = await getCollection('events', ({ data }) => data.published !== false);
 const sortedEvents = sortByDate(allEvents);
-
-// Group events by academic year
-function getAcademicYear(date: Date): string {
-  const year = date.getFullYear();
-  const month = date.getMonth();
-  // Academic year typically starts in July/August
-  if (month >= 6) {
-    return `${year}-${(year + 1).toString().slice(-2)}`;
-  }
-  return `${year - 1}-${year.toString().slice(-2)}`;
-}
-
-const eventsByYear = sortedEvents.reduce((acc, event) => {
-  const year = getAcademicYear(event.data.date);
-  if (!acc[year]) {
-    acc[year] = [];
-  }
-  acc[year].push(event);
-  return acc;
-}, {} as Record<string, typeof sortedEvents>);
-
-const years = Object.keys(eventsByYear).sort().reverse();
-const defaultYear = years[0] || '2023-24';
 ---
 
 <BaseLayout
@@ -48,61 +25,26 @@ const defaultYear = years[0] || '2023-24';
     </div>
   </section>
 
-  <!-- Events Section with Year Tabs -->
+  <!-- Events Section -->
   <section class="py-16 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
-      <!-- Year Tabs -->
-      <div class="flex justify-center mb-12">
-        <div class="inline-flex bg-white dark:bg-gray-800 rounded-xl shadow-lg p-2 gap-2 overflow-x-auto">
-          {years.map((year) => (
-            <button
-              class="year-tab px-6 py-3 rounded-lg font-semibold transition-all duration-200 whitespace-nowrap"
-              data-year={year}
-            >
-              {year}
-            </button>
+      <!-- Events Grid -->
+      {sortedEvents.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedEvents.map((event) => (
+            <EventCard
+              title={event.data.title}
+              description={event.data.description}
+              date={event.data.date}
+              location={event.data.location}
+              coverImage={event.data.coverImage}
+              slug={event.slug}
+              tags={event.data.tags}
+              featured={event.data.featured}
+            />
           ))}
         </div>
-      </div>
-
-      <!-- Events Grid by Year -->
-      {years.map((year) => (
-        <div class="year-content hidden" data-year-content={year}>
-          {eventsByYear[year].length > 0 ? (
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {eventsByYear[year].map((event) => (
-                <EventCard
-                  title={event.data.title}
-                  description={event.data.description}
-                  date={event.data.date}
-                  location={event.data.location}
-                  coverImage={event.data.coverImage}
-                  slug={event.slug}
-                  tags={event.data.tags}
-                  featured={event.data.featured}
-                />
-              ))}
-            </div>
-          ) : (
-            <div class="text-center py-12">
-              <div class="w-24 h-24 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                No Events for {year}
-              </h3>
-              <p class="text-gray-600 dark:text-gray-400 text-lg">
-                Check other years for more events!
-              </p>
-            </div>
-          )}
-        </div>
-      ))}
-
-      <!-- No Events Message -->
-      {years.length === 0 && (
+      ) : (
         <div class="text-center py-12">
           <div class="w-24 h-24 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -120,55 +62,3 @@ const defaultYear = years[0] || '2023-24';
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  // Year tab functionality
-  const tabs = document.querySelectorAll('.year-tab');
-  const contents = document.querySelectorAll('.year-content');
-
-  function setActiveTab(year: string) {
-    // Update tabs
-    tabs.forEach(tab => {
-      if (tab.getAttribute('data-year') === year) {
-        tab.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-600', 'text-white', 'shadow-md');
-        tab.classList.remove('text-gray-700', 'dark:text-gray-300', 'hover:bg-gray-100', 'dark:hover:bg-gray-700');
-      } else {
-        tab.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-blue-600', 'text-white', 'shadow-md');
-        tab.classList.add('text-gray-700', 'dark:text-gray-300', 'hover:bg-gray-100', 'dark:hover:bg-gray-700');
-      }
-    });
-
-    // Update content
-    contents.forEach(content => {
-      if (content.getAttribute('data-year-content') === year) {
-        content.classList.remove('hidden');
-      } else {
-        content.classList.add('hidden');
-      }
-    });
-  }
-
-  // Set initial active tab
-  if (tabs.length > 0) {
-    const firstYear = tabs[0].getAttribute('data-year');
-    if (firstYear) {
-      setActiveTab(firstYear);
-    }
-  }
-
-  // Add click listeners
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const year = tab.getAttribute('data-year');
-      if (year) {
-        setActiveTab(year);
-      }
-    });
-  });
-</script>
-
-<style>
-  .year-tab {
-    cursor: pointer;
-  }
-</style>
