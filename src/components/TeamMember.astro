@@ -18,59 +18,107 @@ const { name, role, github, image, bio, twitter, linkedin, social, showLinkedIn 
 const avatarUrl = image || (github ? `https://github.com/${github}.png` : '/images/team-placeholder.webp');
 ---
 
-<div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
-  <!-- Circular Avatar -->
-  <div class="relative inline-block mb-4">
-    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gray-100 dark:border-gray-700 group-hover:border-primary-500 dark:group-hover:border-primary-400 transition-colors">
-      <img
-        src={avatarUrl}
-        alt={name}
-        class="w-full h-full object-cover"
-        loading="lazy"
-      />
-    </div>
-  </div>
-
-  <!-- Name and Role -->
-  <div class="mb-3">
-    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
-      {name}
-    </h3>
-    <p class="text-gray-600 dark:text-gray-400 text-sm font-medium">
-      {role}
-    </p>
-  </div>
-
-  {!simpleView && (
-    <>
-      <!-- GitHub Handle -->
-      {github && (
-        <a
-          href={`https://github.com/${github}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 text-sm font-medium mb-3 transition-colors"
-        >
-          @{github}
-        </a>
-      )}
-
-      <!-- Additional Social Links -->
-      <div class="flex justify-center space-x-3 pt-3 border-t border-gray-100 dark:border-gray-700">
-        {twitter && (
-          <a
-            href={`https://twitter.com/${twitter}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-500 hover:text-blue-400 dark:text-gray-400 dark:hover:text-blue-300 transition-colors"
-            aria-label="Twitter"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-            </svg>
-          </a>
-        )}
+<!-- Wrapper element that's either a link or a div based on github presence -->
+{github ? (
+  <a 
+    href={`https://github.com/${github}`} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="block group relative rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 text-center cursor-pointer bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-750"
+  >
+    <!-- Content will be rendered inside the link -->
+    <!-- Circular Avatar -->
+    <div class="relative inline-block mb-4">
+      <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gray-100 dark:border-gray-700 group-hover:border-primary-500 dark:group-hover:border-primary-400 transition-colors">
+        <img
+          src={avatarUrl}
+          alt={name}
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
       </div>
-    </>
-  )}
-</div>
+    </div>
+
+    <!-- Name and Role -->
+    <div class="mb-3">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
+        {name}
+      </h3>
+      <p class="text-gray-600 dark:text-gray-400 text-sm font-medium">
+        {role}
+      </p>
+    </div>
+
+    {!simpleView && (
+      <>
+        <!-- GitHub Handle -->
+        <div class="inline-flex items-center text-primary-600 dark:text-primary-400 text-sm font-medium mb-3">
+          @{github}
+        </div>
+
+        <!-- Additional Social Links -->
+        <div class="flex justify-center space-x-3 pt-3 border-t border-gray-100 dark:border-gray-700">
+          {twitter && (
+            <a
+              href={`https://twitter.com/${twitter}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-500 hover:text-blue-400 dark:text-gray-400 dark:hover:text-blue-300 transition-colors"
+              aria-label="Twitter"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          )}
+        </div>
+      </>
+    )}
+  </a>
+) : (
+  <!-- Static version without link -->
+  <div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
+    <!-- Circular Avatar -->
+    <div class="relative inline-block mb-4">
+      <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gray-100 dark:border-gray-700 group-hover:border-primary-500 dark:group-hover:border-primary-400 transition-colors">
+        <img
+          src={avatarUrl}
+          alt={name}
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Name and Role -->
+    <div class="mb-3">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
+        {name}
+      </h3>
+      <p class="text-gray-600 dark:text-gray-400 text-sm font-medium">
+        {role}
+      </p>
+    </div>
+
+    {!simpleView && (
+      <>
+        <!-- Additional Social Links -->
+        <div class="flex justify-center space-x-3 pt-3 border-t border-gray-100 dark:border-gray-700">
+          {twitter && (
+            <a
+              href={`https://twitter.com/${twitter}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-500 hover:text-blue-400 dark:text-gray-400 dark:hover:text-blue-300 transition-colors"
+              aria-label="Twitter"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          )}
+        </div>
+      </>
+    )}
+  </div>
+)}
