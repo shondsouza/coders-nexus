@@ -1,6 +1,6 @@
 ---
-title: "Techspark 2025"
-description: "The Techspark on 29th September welcomes individuals or teams of two to compete in aptitude, coding basics, debugging, and a final coding showdown, offering a fair and engaging platform to showcase skills and win top honors."
+title: "Nexathon 2025"
+description: "The Nexathon on 29th September welcomes individuals or teams of two to compete in aptitude, coding basics, debugging, and a final coding showdown, offering a fair and engaging platform to showcase skills and win top honors."
 date: 2025-10-28
 endDate: 2025-10-29
 location: "PG Building, SDIT Campus"
@@ -14,7 +14,7 @@ websiteLink: "https://nexathon.coderssdit.in"
 published: true
 ---
 
-## About the Workshop
+## About the Nexathon
 
 Join us for an intensive 2-day web development bootcamp where you'll learn the latest technologies used by top companies worldwide. This hands-on workshop is designed for both beginners and intermediate developers looking to level up their skills.
 
