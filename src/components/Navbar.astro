@@ -90,7 +90,7 @@ const isActive = (href: string) => {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 container mx-auto">
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 container mx-auto mobile-menu-bg">
     <div class="flex flex-col space-y-2 items-center">
       {navLinks.map((link) => (
         <a
@@ -124,6 +124,11 @@ const isActive = (href: string) => {
       mobileMenu.classList.toggle('hidden');
       menuIcon.classList.toggle('hidden');
       closeIcon.classList.toggle('hidden');
+      
+      // Toggle background for navbar when menu is open
+      if (navbar) {
+        navbar.classList.toggle('navbar-mobile-open');
+      }
     });
   }
 
@@ -134,7 +139,10 @@ const isActive = (href: string) => {
     if (navbar) {
       // Toggle transparent background based on scroll position
       if (scrollTop <= 50) {
-        navbar.classList.add('navbar-transparent');
+        // Only apply transparency if mobile menu is not open
+        if (!mobileMenu || mobileMenu.classList.contains('hidden')) {
+          navbar.classList.add('navbar-transparent');
+        }
       } else {
         navbar.classList.remove('navbar-transparent');
       }
@@ -152,7 +160,7 @@ const isActive = (href: string) => {
 
 <style>
   .navbar-container {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.95);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
   }
@@ -162,9 +170,32 @@ const isActive = (href: string) => {
     border-bottom: 1px solid transparent !important;
   }
   
+  .navbar-mobile-open {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+  
   .dark .navbar-container {
-    background-color: rgba(17, 24, 39, 0.8);
+    background-color: rgba(17, 24, 39, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark .navbar-mobile-open {
+    background-color: rgba(17, 24, 39, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Mobile menu background */
+  .mobile-menu-bg {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0 0 1rem 1rem;
+    margin-top: -0.5rem;
+    padding-top: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .mobile-menu-bg {
+    background-color: rgba(17, 24, 39, 0.95);
   }
   
   /* Removed navbar-hidden class to prevent auto-hiding */
