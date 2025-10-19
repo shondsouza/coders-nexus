@@ -32,16 +32,7 @@ const sortedEvents = sortByDate(allEvents);
       {sortedEvents.length > 0 ? (
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sortedEvents.map((event) => (
-            <EventCard
-              title={event.data.title}
-              description={event.data.description}
-              date={event.data.date}
-              location={event.data.location}
-              coverImage={event.data.coverImage}
-              slug={event.slug}
-              tags={event.data.tags}
-              featured={event.data.featured}
-            />
+            <EventCard {event} />
           ))}
         </div>
       ) : (

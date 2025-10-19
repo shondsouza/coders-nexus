@@ -1,145 +1,80 @@
 ---
-title: "Nexathon Hackathon 2025"
-description: "24-hour coding marathon with exciting challenges, amazing prizes, and opportunities to showcase your innovation."
+title: "Techspark 2025"
+description: "The Techspark on 29th September welcomes individuals or teams of two to compete in aptitude, coding basics, debugging, and a final coding showdown, offering a fair and engaging platform to showcase skills and win top honors."
 date: 2025-10-28
 endDate: 2025-10-29
-location: "Shree Devi Institute of Technology, Mangaluru"
-coverImage: "/content/events/nexathon2025/cover.webp"
+location: "PG Building, SDIT Campus"
+coverImage: "/src/content/events/Nexathon2025/images/coverpage.png"
 gallery:
-  - "/content/events/hackathon-2024/photo1.webp"
-  - "/content/events/hackathon-2024/photo2.webp"
-  - "/content/events/hackathon-2024/photo3.webp"
+  - "/content/events/web-dev-workshop/photo1.webp"
+  - "/content/events/web-dev-workshop/photo2.webp"
 featured: true
-tags: ["Hackathon", "Competition", "Innovation", "Coding", "Prizes"]
-organizers: ["Coders Nexus SDIT", "Innovation Cell"]
+organizers: ["Coders Nexus SDIT", "Tech Club"]
 websiteLink: "https://nexathon.coderssdit.in"
 published: true
 ---
 
-## 🚀 About Nexathon Hackathon
+## About the Workshop
 
-Get ready for the most exciting coding event of the year! Nexathon Hackathon 2025 brings together the brightest minds to solve real-world problems, build innovative solutions, and compete for amazing prizes.
+Join us for an intensive 2-day web development bootcamp where you'll learn the latest technologies used by top companies worldwide. This hands-on workshop is designed for both beginners and intermediate developers looking to level up their skills.
 
-## 🎯 Theme: Build the Future
+## What You'll Learn
 
-This year's theme focuses on creating solutions for:
-- **Sustainability**: Green tech and environmental solutions
-- **Education**: EdTech innovations
-- **Healthcare**: Digital health solutions
-- **Social Impact**: Community-driven projects
+### Day 1: Fundamentals
+- **React Basics**: Components, Props, State, and Hooks
+- **Modern JavaScript**: ES6+ features, async/await, and modules
+- **Responsive Design**: CSS Grid, Flexbox, and mobile-first approach
+- **Tailwind CSS**: Utility-first styling and component design
 
-## 🏆 Prizes & Perks
+### Day 2: Advanced Topics
+- **Next.js Framework**: Server-side rendering and static generation
+- **API Integration**: Fetching data and handling authentication
+- **State Management**: Context API and modern patterns
+- **Deployment**: Vercel deployment and best practices
 
-### Prize Pool: ₹1,00,000+
+## Prerequisites
 
-**1st Place**
-- Cash Prize: ₹50,000
-- GitHub Pro subscription (1 year)
-- Internship opportunities
-- MacBook Pro (sponsored)
+- Basic knowledge of HTML, CSS, and JavaScript
+- Laptop with Node.js installed
+- Code editor (VS Code recommended)
+- Enthusiasm to learn!
 
-**2nd Place**
-- Cash Prize: ₹30,000
-- JetBrains All Products Pack (1 year)
-- Tech gadgets bundle
+## Schedule
 
-**3rd Place**
-- Cash Prize: ₹20,000
-- Domain.com credits
-- Swag kit
-
-**Special Categories**
-- Best UI/UX Design: ₹10,000
-- Best Use of AI/ML: ₹10,000
-- Most Innovative Idea: ₹10,000
-- Social Impact Award: ₹10,000
-
-## 📅 Event Timeline
-
-### Pre-Event
-- **Dec 20**: Registration Opens
-- **Jan 10**: Problem Statements Released
-- **Jan 15**: Team Formation Deadline
-- **Jan 18**: Mentor Meet & Greet
-
-### Main Event - January 20-21, 2025
-
-**Day 1 - January 20**
-- 8:00 AM - Check-in & Breakfast
-- 9:00 AM - Opening Ceremony
-- 10:00 AM - Hacking Begins!
-- 1:00 PM - Lunch
-- 3:00 PM - Mentor Rounds
-- 6:00 PM - Snacks & Networking
-- 9:00 PM - Dinner
-- 12:00 AM - Midnight Snacks
-
-**Day 2 - January 21**
-- 8:00 AM - Breakfast
-- 10:00 AM - Hacking Ends
-- 10:30 AM - Submission Deadline
-- 11:00 AM - Initial Judging
+**Day 1 - December 15, 2024**
+- 9:00 AM - Registration & Breakfast
+- 9:30 AM - Opening & Introduction to React
+- 11:00 AM - Hands-on: Building Your First Component
 - 1:00 PM - Lunch Break
-- 2:00 PM - Final Presentations
-- 5:00 PM - Awards Ceremony
-- 6:00 PM - Closing & Networking
+- 2:00 PM - Tailwind CSS Workshop
+- 4:00 PM - Project Time
+- 6:00 PM - Day 1 Wrap-up
 
-## 👥 Team Requirements
+**Day 2 - December 16, 2024**
+- 9:00 AM - Recap & Q&A
+- 9:30 AM - Introduction to Next.js
+- 11:00 AM - Building a Full-Stack App
+- 1:00 PM - Lunch Break
+- 2:00 PM - API Integration Workshop
+- 4:00 PM - Deployment & Best Practices
+- 5:30 PM - Closing Ceremony & Certificates
 
-- Team size: 2-4 members
-- At least one member should be from SDIT
-- Cross-college teams encouraged
-- Solo participants will be paired up
+## What's Included
 
-## 🛠️ Resources Provided
+- ✅ 2 days of intensive training
+- ✅ Learning materials and resources
+- ✅ Breakfast and lunch both days
+- ✅ Certificate of completion
+- ✅ Access to Discord community
+- ✅ Mentor support for 1 month
 
-- High-speed WiFi
-- Power backup
-- Workstations
-- APIs and cloud credits
-- Mentorship from industry experts
-- 24/7 tech support
-- Free meals and snacks
-- Sleeping area (optional)
+## Registration
 
-## 📋 Rules & Guidelines
+Limited seats available! Register now to secure your spot.
 
-1. All code must be written during the hackathon
-2. Open-source libraries and frameworks allowed
-3. Judges' decisions are final
-4. Plagiarism will lead to disqualification
-5. Maintain a respectful environment
-6. Follow Code of Conduct
+**Registration Fee**: Free for SDIT students
 
-## 🎓 Mentors & Judges
+## Contact
 
-- **Industry Experts** from Google, Microsoft, Amazon
-- **Successful Entrepreneurs** from top startups
-- **Senior Faculty** from premier institutions
-- **Previous Winners** sharing their experience
-
-## 📝 Registration
-
-**Registration Fee**: ₹200 per team (refundable as swag)
-
-**What you get**:
-- Hackathon Kit
-- T-shirt & Stickers
-- Meals for 24 hours
-- Mentorship sessions
-- Networking opportunities
-
-**Register by**: January 15, 2025
-
-## 💡 Past Winners
-
-Check out what previous participants built:
-- [2023 Winner - EduConnect](https://github.com/coders-nexus-sdit/educonnect)
-- [2022 Winner - HealthTrack](https://github.com/coders-nexus-sdit/healthtrack)
-
-## 📞 Contact
-
-Questions? Reach out to:
-- Email: hackathon@codersnexus-sdit.org
-- Discord: #hackathon-2024
-- Instagram: @codersnexus.sdit
+For any queries, reach out to us at:
+- Email: codersnexus.osc@gmail.com

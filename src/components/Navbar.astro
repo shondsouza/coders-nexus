@@ -42,8 +42,8 @@ const isActive = (href: string) => {
           class={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200
             ${
               isActive(link.href)
-                ? 'text-blue-700 font-semibold underline underline-offset-4'
-                : 'text-gray-700 hover:text-blue-700'
+                ? 'text-primary-600 font-semibold underline underline-offset-4'
+                : 'text-gray-700 hover:text-primary-600'
             }`}
         >
           {link.name}
@@ -54,7 +54,7 @@ const isActive = (href: string) => {
     <!-- Mobile Menu Button -->
     <button
       id="mobile-menu-button"
-      class="md:hidden p-2 text-gray-700 hover:text-blue-700 transition-all duration-200"
+      class="md:hidden p-2 text-gray-700 hover:text-primary-600 transition-all duration-200"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -98,8 +98,8 @@ const isActive = (href: string) => {
           class={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
             ${
               isActive(link.href)
-                ? 'text-blue-700 font-semibold underline underline-offset-4'
-                : 'text-gray-700 hover:text-blue-700'
+                ? 'text-primary-600 font-semibold underline underline-offset-4'
+                : 'text-gray-700 hover:text-primary-600'
             }`}
         >
           {link.name}
@@ -127,36 +127,18 @@ const isActive = (href: string) => {
     });
   }
 
-  // Handle navbar visibility and background on scroll
-  let lastScrollTop = 0;
-  let scrollTimeout: number;
-  
+  // Handle navbar background on scroll (without hiding)
   window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     if (navbar) {
-      // Show navbar when scrolling
-      navbar.classList.remove('navbar-hidden');
-      
       // Toggle transparent background based on scroll position
       if (scrollTop <= 50) {
         navbar.classList.add('navbar-transparent');
       } else {
         navbar.classList.remove('navbar-transparent');
       }
-      
-      // Clear existing timeout
-      clearTimeout(scrollTimeout);
-      
-      // Hide navbar after user stops scrolling (only if scrolled down)
-      if (scrollTop > 100) {
-        scrollTimeout = window.setTimeout(() => {
-          navbar.classList.add('navbar-hidden');
-        }, 2000); // Hide after 2 seconds of no scrolling
-      }
     }
-    
-    lastScrollTop = scrollTop;
   });
   
   // Set initial state on page load
@@ -185,7 +167,5 @@ const isActive = (href: string) => {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  .navbar-hidden {
-    transform: translateY(-100%);
-  }
+  /* Removed navbar-hidden class to prevent auto-hiding */
 </style>

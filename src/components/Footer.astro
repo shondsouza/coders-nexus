@@ -18,7 +18,7 @@ const footerLinks = {
 };
 ---
 
-<footer class="bg-gradient-to-br from-blue-700 to-blue-800 text-white">
+<footer class="bg-gradient-to-br from-primary-600 to-accent-600 text-white">
   <div class="max-w-7xl mx-auto px-6 py-12">
     <!-- Main Footer Content -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
@@ -26,18 +26,18 @@ const footerLinks = {
       <div class="text-center md:text-left">
         <h2 class="text-2xl font-bold mb-4 text-white">Coders Nexus</h2>
 
-        <!-- Increased font size here -->
-        <p class="text-blue-100 text-base leading-relaxed mb-2 font-medium">
-          Shree Devi Institute of Technology
-        </p>
-        <p class="text-blue-100 text-base leading-relaxed mb-4 font-medium">
-          Airport Rd, Kenjar, Mangaluru,<br />
-          Karnataka - 574142 IN
-        </p>
+        <!-- Updated with link as requested -->
+        <a 
+          href="https://maps.app.goo.gl/qRqni4NNwMibajKK9" 
+          target="_blank"
+          class="text-beige-200 hover:text-white transition-colors duration-300 block mb-4"
+        >
+          Shree Devi Institute Of Technology, Airport Rd, Kenjar, Mangaluru, Karnataka - 574142 IN
+        </a>
 
         <a 
           href="mailto:codersnexus.osc@gmail.com" 
-          class="inline-flex items-center text-blue-200 hover:text-blue-400 transition-colors duration-200 text-sm"
+          class="inline-flex items-center text-beige-100 hover:text-white transition-colors duration-200 text-sm"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -58,7 +58,7 @@ const footerLinks = {
                   href={link.href} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="text-blue-100 hover:text-blue-400 transition-all duration-200 text-sm inline-flex items-center group"
+                  class="text-beige-100 hover:text-white transition-all duration-200 text-sm inline-flex items-center group"
                 >
                   <span class="group-hover:translate-x-1 transition-transform duration-200">
                     {link.name}
@@ -79,7 +79,7 @@ const footerLinks = {
             <li>
               <a 
                 href="/guidelines" 
-                class="text-blue-100 hover:text-blue-400 transition-all duration-200 text-sm inline-flex items-center group"
+                class="text-beige-100 hover:text-white transition-all duration-200 text-sm inline-flex items-center group"
               >
                 <span class="group-hover:translate-x-1 transition-transform duration-200">
                   Community Guidelines
@@ -91,8 +91,10 @@ const footerLinks = {
             </li>
             <li>
               <a 
-                href="/conduct" 
-                class="text-blue-100 hover:text-blue-400 transition-all duration-200 text-sm inline-flex items-center group"
+                href="https://github.com/codersnexus-sdit/code-of-conduct" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-beige-100 hover:text-white transition-all duration-200 text-sm inline-flex items-center group"
               >
                 <span class="group-hover:translate-x-1 transition-transform duration-200">
                   Code of Conduct
@@ -108,10 +110,10 @@ const footerLinks = {
     </div>
 
     <!-- Divider -->
-    <div class="border-t border-blue-600/50"></div>
+    <div class="border-t border-beige-600/50"></div>
 
     <!-- Bottom Section -->
-    <div class="text-center pt-8 text-blue-200 text-sm">
+    <div class="text-center pt-8 text-beige-100 hover:text-white transition-colors duration-300 text-sm cursor-pointer">
       Coders Nexus © {currentYear} All Rights Reserved.
     </div>
   </div>

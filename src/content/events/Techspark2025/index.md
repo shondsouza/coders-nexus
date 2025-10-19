@@ -2,14 +2,12 @@
 title: "Techspark 2025"
 description: "The Techspark on 29th September welcomes individuals or teams of two to compete in aptitude, coding basics, debugging, and a final coding showdown, offering a fair and engaging platform to showcase skills and win top honors."
 date: 2025-09-29
-endDate: 2025-09-29
-location: "Main Auditorium, SDIT Campus"
+location: "PG Building, SDIT Campus"
 coverImage: "/src/content/events/Techspark2025/images/coverpage.png"
 gallery:
   - "/content/events/web-dev-workshop/photo1.webp"
   - "/content/events/web-dev-workshop/photo2.webp"
 featured: true
-tags: ["React", "Next.js", "Tailwind CSS", "Web Development", "Workshop"]
 organizers: ["Coders Nexus SDIT", "Tech Club"]
 websiteLink: "https://techspark.coderssdit.in"
 published: true
@@ -73,13 +71,9 @@ Join us for an intensive 2-day web development bootcamp where you'll learn the l
 
 Limited seats available! Register now to secure your spot.
 
-**Registration Fee**: Free for SDIT students | ₹500 for external participants
-
-**Deadline**: December 10, 2024
+**Registration Fee**: Free for SDIT students
 
 ## Contact
 
 For any queries, reach out to us at:
-- Email: events@codersnexus-sdit.org
-- Discord: Join our server
-- Phone: +91 98765 43210
+- Email: codersnexus.osc@gmail.com

@@ -79,49 +79,6 @@ const latestEvents = sortByDate(allEvents).slice(0, 3);
     </div>
   </section>
 
-  <!-- Latest Events Section -->
-  <section class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Upcoming Events
-        </h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Join us for exciting workshops, hackathons, and tech talks designed to enhance your skills and connect with fellow developers.
-        </p>
-      </div>
-
-      {latestEvents.length > 0 ? (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {latestEvents.map((event) => (
-            <EventCard
-              title={event.data.title}
-              description={event.data.description}
-              date={event.data.date}
-              location={event.data.location}
-              coverImage={event.data.coverImage}
-              slug={event.slug}
-              tags={event.data.tags}
-              featured={event.data.featured}
-            />
-          ))}
-        </div>
-      ) : (
-        <div class="text-center py-12">
-          <p class="text-gray-600 dark:text-gray-400 text-lg">
-            No upcoming events at the moment. Check back soon!
-          </p>
-        </div>
-      )}
-
-      <div class="text-center">
-        <Button href="/events" variant="primary" size="lg">
-          View All Events
-        </Button>
-      </div>
-    </div>
-  </section>
-
   <!-- What We Do Section -->
   <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-4">

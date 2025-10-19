@@ -19,4 +19,12 @@ const events = defineCollection({
   }),
 });
 
-export const collections = { events };
+const guidelines = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string().optional(),
+    description: z.string().optional(),
+  }),
+});
+
+export const collections = { events, guidelines };
