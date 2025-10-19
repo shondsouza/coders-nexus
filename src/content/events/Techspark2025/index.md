@@ -3,7 +3,7 @@ title: "Techspark 2025"
 description: "The Techspark on 29th September welcomes individuals or teams of two to compete in aptitude, coding basics, debugging, and a final coding showdown, offering a fair and engaging platform to showcase skills and win top honors."
 date: 2025-09-29
 location: "PG Building, SDIT Campus"
-coverImage: "/src/content/events/Techspark2025/images/coverpage.png"
+coverImage: "/content/events/techspark2025/cover.webp"
 gallery:
   - "/content/events/web-dev-workshop/photo1.webp"
   - "/content/events/web-dev-workshop/photo2.webp"

@@ -4,7 +4,7 @@ description: "The Nexathon on 29th September welcomes individuals or teams of tw
 date: 2025-10-28
 endDate: 2025-10-29
 location: "PG Building, SDIT Campus"
-coverImage: "/src/content/events/Nexathon2025/images/coverpage.png"
+coverImage: "/content/events/nexathon2025/cover.webp"
 gallery:
   - "/content/events/web-dev-workshop/photo1.webp"
   - "/content/events/web-dev-workshop/photo2.webp"
