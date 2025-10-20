@@ -13,13 +13,12 @@ const latestEvents = sortByDate(allEvents).slice(0, 3);
 
 <BaseLayout
   title="Home"
-  description="Coders Nexus SDIT - A student-led community fostering innovation, collaboration, and technical excellence through coding, open source, and technology events."
+  description="Coders Nexus - The official open-source community built by students, for students of Shree Devi College. Empowering students to code, collaborate, and contribute to open source."
 >
   <!-- Hero Section -->
   <Hero
-    title="Where Innovation Meets Code"
-    description="A community of tech enthusiasts and open-source contributors, empowering students to learn, collaborate, and grow through technology."
-    primaryCTA={{ text: "Join Our Community", href: "/contact" }}
+    title="Coders Nexus SDIT"
+    description="A student-driven community of tech enthusiasts and open-source contributors, empowering young developers to join the open-source ecosystem through hands-on projects, events, mentorship, and skill development."
     secondaryCTA={{ text: "Explore Events", href: "/events" }}
   />
 
@@ -29,24 +28,23 @@ const latestEvents = sortByDate(allEvents).slice(0, 3);
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="space-y-6">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-            Who We Are
+            Welcome to Coders Nexus
           </h2>
           <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-            Coders Nexus SDIT is a vibrant student-led community dedicated to fostering 
-            technical excellence and innovation. We bring together passionate developers, 
-            designers, and tech enthusiasts to learn, build, and grow together.
+            We believe that great ideas thrive through collaboration — and that every coder, 
+            designer, and innovator deserves a platform to grow, build, and make an impact.
           </p>
           <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-            Through hands-on workshops, hackathons, and collaborative projects, we empower 
-            students to develop real-world skills and contribute to meaningful open-source 
-            initiatives.
+            Coders Nexus is the official open-source community of Shree Devi College, created 
+            by students, for students. Here, you'll collaborate on real-world projects, learn 
+            professional development workflows, and prepare for internships and global opportunities.
           </p>
           <div class="flex flex-wrap gap-4 pt-4">
             <Button href="/about" variant="primary">
-              Learn More About Us
+              Our Mission
             </Button>
             <Button href="/team" variant="outline">
-              Meet Our Team
+              Meet the Community
             </Button>
           </div>
         </div>
@@ -56,17 +54,17 @@ const latestEvents = sortByDate(allEvents).slice(0, 3);
             <div class="space-y-4">
               <div class="bg-gradient-to-br from-primary-500 to-primary-600 p-6 rounded-2xl text-white">
                 <div class="text-4xl font-bold mb-2">500+</div>
-                <div class="text-primary-100">Active Members</div>
+                <div class="text-primary-100">Students Connected</div>
               </div>
               <div class="bg-gradient-to-br from-accent-500 to-accent-600 p-6 rounded-2xl text-white">
-                <div class="text-4xl font-bold mb-2">50+</div>
-                <div class="text-accent-100">Events Hosted</div>
+                <div class="text-4xl font-bold mb-2">20+</div>
+                <div class="text-accent-100">Open Source Projects</div>
               </div>
             </div>
             <div class="space-y-4 mt-8">
               <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-6 rounded-2xl text-white">
-                <div class="text-4xl font-bold mb-2">20+</div>
-                <div class="text-purple-100">Open Projects</div>
+                <div class="text-4xl font-bold mb-2">50+</div>
+                <div class="text-purple-100">Events & Sprints</div>
               </div>
               <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-2xl text-white">
                 <div class="text-4xl font-bold mb-2">100%</div>
@@ -80,96 +78,122 @@ const latestEvents = sortByDate(allEvents).slice(0, 3);
   </section>
 
   <!-- What We Do Section -->
-  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+  <section class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           What We Do
         </h2>
         <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          We organize diverse activities to help you grow as a developer and tech professional.
+          Join a thriving student-led tech ecosystem that promotes open collaboration, learning by doing, and innovation that matters.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Workshops -->
-        <div class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-8 rounded-2xl">
+        <!-- Open Source Projects -->
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
           <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Workshops & Seminars</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            Regular hands-on workshops covering web development, mobile apps, AI/ML, and more.
-          </p>
-        </div>
-
-        <!-- Hackathons -->
-        <div class="bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/20 dark:to-accent-800/20 p-8 rounded-2xl">
-          <div class="w-12 h-12 bg-accent-600 rounded-lg flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Hackathons</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            Exciting 24-hour coding challenges to build innovative solutions and win prizes.
-          </p>
-        </div>
-
-        <!-- Open Source -->
-        <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-8 rounded-2xl">
-          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Open Source Projects</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">🚀 Open Source Projects</h3>
           <p class="text-gray-600 dark:text-gray-300">
-            Collaborate on real-world projects and contribute to the open-source community.
+            Collaborate on real-world projects, contribute to repositories, and learn professional development workflows with Git and GitHub.
           </p>
         </div>
 
-        <!-- Tech Talks -->
-        <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl">
-          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+        <!-- Peer Learning -->
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 bg-accent-600 rounded-lg flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Tech Talks</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">💬 Peer Learning & Mentorship</h3>
           <p class="text-gray-600 dark:text-gray-300">
-            Learn from industry experts and alumni about latest technologies and career insights.
+            Learn together through workshops, peer sessions, and guided mentorship from experienced students in the community.
           </p>
         </div>
 
-        <!-- Networking -->
-        <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-8 rounded-2xl">
+        <!-- Hackathons -->
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">🎯 Hackathons & Events</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Participate in coding challenges, open source sprints, and college-wide tech events that ignite creativity and innovation.
+          </p>
+        </div>
+
+        <!-- Developer Growth -->
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">🌐 Developer Growth</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Gain hands-on experience with Git, GitHub, and full-stack tools to prepare for internships and global opportunities.
+          </p>
+        </div>
+
+        <!-- Community -->
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
           <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Networking Events</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">🤝 Inclusive Community</h3>
           <p class="text-gray-600 dark:text-gray-300">
-            Connect with peers, mentors, and professionals from the tech industry.
+            Exclusively for Shree Devi College students — all branches, all levels. From first line of code to full-stack apps, you're welcome here.
           </p>
         </div>
 
-        <!-- Mentorship -->
-        <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-8 rounded-2xl">
+        <!-- Learning by Doing -->
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
           <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Mentorship Programs</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">🌱 Learning by Doing</h3>
           <p class="text-gray-600 dark:text-gray-300">
-            Get guidance from experienced developers and contribute to mentoring juniors.
+            Build real projects, solve real problems, and contribute to repositories that matter. Theory meets practice in every session.
           </p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Recent Events Section (if needed) -->
+  {latestEvents.length > 0 && (
+    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Recent Events
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300">
+            Check out our latest workshops, hackathons, and coding sprints
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {latestEvents.map((event) => (
+            <EventCard event={event} />
+          ))}
+        </div>
+        <div class="text-center mt-12">
+          <Button href="/events" variant="primary">
+            View All Events
+          </Button>
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>
