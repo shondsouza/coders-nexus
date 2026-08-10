@@ -1,79 +1,33 @@
 ---
-title: "Techspark 2025"
-description: "The Techspark on 29th September welcomes individuals or teams of two to compete in aptitude, coding basics, debugging, and a final coding showdown, offering a fair and engaging platform to showcase skills and win top honors."
+title: "TechSpark 2025"
+description: "A coding and problem-solving competition featuring aptitude, debugging, and a final coding showdown."
 date: 2025-09-29
-location: "PG Building, SDIT Campus"
+location: "Seminar Hall, PG Building, Shree Devi Institute of Technology, Mangaluru"
 coverImage: "/content/events/techspark2025/cover.webp"
-gallery:
-  - "/content/events/web-dev-workshop/photo1.webp"
-  - "/content/events/web-dev-workshop/photo2.webp"
 featured: true
-organizers: ["Coders Nexus SDIT", "Tech Club"]
-websiteLink: "https://techspark.coderssdit.in"
+organizers: ["Coders Nexus SDIT"]
 published: true
 ---
 
-## About the Workshop
+# TechSpark 2025 💻⚡
 
-Join us for an intensive 2-day web development bootcamp where you'll learn the latest technologies used by top companies worldwide. This hands-on workshop is designed for both beginners and intermediate developers looking to level up their skills.
+**TechSpark 2025** was a coding and problem-solving competition organized by **Coders Nexus — SDIT Open Source Community** at **Shree Devi Institute of Technology, Mangaluru** on **29th September 2025**.
 
-## What You'll Learn
+The event challenged participants through three exciting rounds — **Aptitude & Coding, Error Debugging, and a Final Coding Showdown**. Participants competed individually or in teams of up to two members, putting their programming fundamentals, logical thinking, debugging, and problem-solving skills to the test.
 
-### Day 1: Fundamentals
-- **React Basics**: Components, Props, State, and Hooks
-- **Modern JavaScript**: ES6+ features, async/await, and modules
-- **Responsive Design**: CSS Grid, Flexbox, and mobile-first approach
-- **Tailwind CSS**: Utility-first styling and component design
+From the opening round to the intense final challenge, TechSpark provided an engaging platform for students to compete, learn, collaborate, and showcase their technical abilities.
 
-### Day 2: Advanced Topics
-- **Next.js Framework**: Server-side rendering and static generation
-- **API Integration**: Fetching data and handling authentication
-- **State Management**: Context API and modern patterns
-- **Deployment**: Vercel deployment and best practices
+## 📅 Event Details
 
-## Prerequisites
+- **Date:** 29th September 2025
+- **Venue:** Seminar Hall, PG Building
+- **Organized by:** Coders Nexus — SDIT Open Source Community
+- **Institution:** Shree Devi Institute of Technology, Mangaluru
 
-- Basic knowledge of HTML, CSS, and JavaScript
-- Laptop with Node.js installed
-- Code editor (VS Code recommended)
-- Enthusiasm to learn!
+## 🏆 Event Highlights
 
-## Schedule
-
-**Day 1 - December 15, 2024**
-- 9:00 AM - Registration & Breakfast
-- 9:30 AM - Opening & Introduction to React
-- 11:00 AM - Hands-on: Building Your First Component
-- 1:00 PM - Lunch Break
-- 2:00 PM - Tailwind CSS Workshop
-- 4:00 PM - Project Time
-- 6:00 PM - Day 1 Wrap-up
-
-**Day 2 - December 16, 2024**
-- 9:00 AM - Recap & Q&A
-- 9:30 AM - Introduction to Next.js
-- 11:00 AM - Building a Full-Stack App
-- 1:00 PM - Lunch Break
-- 2:00 PM - API Integration Workshop
-- 4:00 PM - Deployment & Best Practices
-- 5:30 PM - Closing Ceremony & Certificates
-
-## What's Included
-
-- ✅ 2 days of intensive training
-- ✅ Learning materials and resources
-- ✅ Breakfast and lunch both days
-- ✅ Certificate of completion
-- ✅ Access to Discord community
-- ✅ Mentor support for 1 month
-
-## Registration
-
-Limited seats available! Register now to secure your spot.
-
-**Registration Fee**: Free for SDIT students
-
-## Contact
-
-For any queries, reach out to us at:
-- Email: codersnexus.osc@gmail.com
+- Aptitude & Coding Challenge
+-  Error Debugging Round
+-  Final Coding Showdown
+-  Competitive and collaborative environment
+-  Opportunity to showcase programming and problem-solving skills

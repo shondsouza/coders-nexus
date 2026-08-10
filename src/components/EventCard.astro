@@ -12,7 +12,7 @@ interface EventCardProps {
   featured?: boolean;
   // Option 2: Receive event object
   event?: {
-    slug: string;
+    id: string;
     data: {
       title: string;
       description: string;
@@ -29,11 +29,10 @@ interface EventCardProps {
 const props = Astro.props as EventCardProps;
 
 // Handle both ways of passing data
-const { 
-  title, 
-  description, 
-  date, 
-  location, 
+const {
+  title,
+  description,
+  date,
   coverImage, 
   slug, 
   tags = [], 
@@ -45,9 +44,8 @@ const {
 const finalTitle = title || event?.data?.title || '';
 const finalDescription = description || event?.data?.description || '';
 const finalDate = date || event?.data?.date;
-const finalLocation = location || event?.data?.location || '';
 const finalCoverImage = coverImage || event?.data?.coverImage || '';
-const finalSlug = slug || event?.slug || '';
+const finalSlug = slug || event?.id || '';
 const finalTags = tags.length > 0 ? tags : (event?.data?.tags || []);
 const finalFeatured = featured || event?.data?.featured || false;
 
@@ -97,13 +95,5 @@ const formattedDate = finalDate ? finalDate.toLocaleDateString('en-US', {
       <span>{formattedDate}</span>
     </div>
     
-    <!-- Event Location -->
-    <div class="flex items-center justify-center text-sm text-gray-500 dark:text-gray-400">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-      <span>{finalLocation}</span>
-    </div>
   </div>
 </a>

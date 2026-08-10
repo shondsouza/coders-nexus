@@ -1,80 +1,37 @@
 ---
-title: "Nexathon 2025"
-description: "The Nexathon on 29th September welcomes individuals or teams of two to compete in aptitude, coding basics, debugging, and a final coding showdown, offering a fair and engaging platform to showcase skills and win top honors."
+title: "NEXATHON 2025"
+description: "A 24-hour hackathon focused on innovation, problem-solving, coding, and teamwork."
 date: 2025-10-28
 endDate: 2025-10-29
-location: "PG Building, SDIT Campus"
+location: "PG Building, Shree Devi Institute of Technology, Mangaluru"
 coverImage: "/content/events/nexathon2025/cover.webp"
-gallery:
-  - "/content/events/web-dev-workshop/photo1.webp"
-  - "/content/events/web-dev-workshop/photo2.webp"
 featured: true
-organizers: ["Coders Nexus SDIT", "Tech Club"]
-websiteLink: "https://nexathon.coderssdit.in"
+organizers: ["IEEE Student Branch", "Coders Nexus SDIT"]
 published: true
 ---
 
-## About the Nexathon
+# NEXATHON 2025 🚀
 
-Join us for an intensive 2-day web development bootcamp where you'll learn the latest technologies used by top companies worldwide. This hands-on workshop is designed for both beginners and intermediate developers looking to level up their skills.
+**NEXATHON 2025** was a 24-hour hackathon organized by the **IEEE Student Branch and Coders Nexus** at **Shree Devi Institute of Technology, Mangaluru** on **28th and 29th October 2025**.
 
-## What You'll Learn
+The event brought together students and aspiring developers for an intense journey of **innovation, problem-solving, coding, and teamwork**. Participants worked on real-world problem statements, transforming their ideas into creative and impactful solutions within 24 hours.
 
-### Day 1: Fundamentals
-- **React Basics**: Components, Props, State, and Hooks
-- **Modern JavaScript**: ES6+ features, async/await, and modules
-- **Responsive Design**: CSS Grid, Flexbox, and mobile-first approach
-- **Tailwind CSS**: Utility-first styling and component design
+From the inspiring inauguration to late-night brainstorming, coding, debugging, and collaboration, NEXATHON 2025 provided participants with an exciting platform to explore technology, showcase their skills, and build meaningful solutions.
 
-### Day 2: Advanced Topics
-- **Next.js Framework**: Server-side rendering and static generation
-- **API Integration**: Fetching data and handling authentication
-- **State Management**: Context API and modern patterns
-- **Deployment**: Vercel deployment and best practices
+## 📅 Event Details
 
-## Prerequisites
+- **Date:** 28th – 29th October 2025
+- **Venue:** PG Building, Shree Devi Institute of Technology, Mangaluru
+- **Duration:** 24 Hours
+- **Organized by:** IEEE Student Branch & Coders Nexus
+- **Prize Pool:** ₹50,000
 
-- Basic knowledge of HTML, CSS, and JavaScript
-- Laptop with Node.js installed
-- Code editor (VS Code recommended)
-- Enthusiasm to learn!
+## 🏆 Event Highlights
 
-## Schedule
-
-**Day 1 - December 15, 2024**
-- 9:00 AM - Registration & Breakfast
-- 9:30 AM - Opening & Introduction to React
-- 11:00 AM - Hands-on: Building Your First Component
-- 1:00 PM - Lunch Break
-- 2:00 PM - Tailwind CSS Workshop
-- 4:00 PM - Project Time
-- 6:00 PM - Day 1 Wrap-up
-
-**Day 2 - December 16, 2024**
-- 9:00 AM - Recap & Q&A
-- 9:30 AM - Introduction to Next.js
-- 11:00 AM - Building a Full-Stack App
-- 1:00 PM - Lunch Break
-- 2:00 PM - API Integration Workshop
-- 4:00 PM - Deployment & Best Practices
-- 5:30 PM - Closing Ceremony & Certificates
-
-## What's Included
-
-- ✅ 2 days of intensive training
-- ✅ Learning materials and resources
-- ✅ Breakfast and lunch both days
-- ✅ Certificate of completion
-- ✅ Access to Discord community
-- ✅ Mentor support for 1 month
-
-## Registration
-
-Limited seats available! Register now to secure your spot.
-
-**Registration Fee**: Free for SDIT students
-
-## Contact
-
-For any queries, reach out to us at:
-- Email: codersnexus.osc@gmail.com
+-  Real-world problem statements
+-  24-hour intensive hackathon
+-  Teamwork and collaboration
+-  Innovation and technology
+-  Problem-solving and brainstorming
+-  ₹50,000 prize pool
+-  Internship and recruitment opportunities
