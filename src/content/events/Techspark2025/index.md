@@ -17,7 +17,7 @@ The event challenged participants through three exciting rounds — **Aptitude &
 
 From the opening round to the intense final challenge, TechSpark provided an engaging platform for students to compete, learn, collaborate, and showcase their technical abilities.
 
-<a href="https://techspark.coderssdit.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-base font-semibold !text-white !no-underline shadow-md transition-colors duration-200 hover:bg-blue-600 hover:!text-white">
+<a href="https://techspark.coderssdit.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-base font-semibold !text-white !no-underline shadow-md transition-colors duration-200 hover:bg-indigo-700 hover:!text-white">
   Website
 </a>
 
